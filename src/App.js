@@ -12,7 +12,6 @@ function App() {
 
   useEffect(() => {
     document.title = "Pernikahan Ayu & Furqon";
-    document.images = IMAGES.FirstContentBG;
   }, []);
 
   useEffect(() => {
