@@ -1,42 +1,19 @@
 import { useState, useRef, useEffect } from "react";
 import "./App.css";
-import IMAGES from "./assets/images/iindex";
 import MUSIC from "./assets/musics";
 import FirstInvContent from "./screens/FirstInvContent";
 import Home from "./screens/Home";
 import SecondInvContent from "./screens/SecondInvContent";
 import ThirdInvContent from "./screens/ThirdInvContent";
+import IMAGES from "./assets/images/iindex";
 
 function App() {
-  const audio = new Audio(MUSIC.Instrumental);
+  const [audio] = useState(new Audio(MUSIC.Instrumental));
+  const [play, setIsPlay] = useState(false);
+  const buttonPlayRef = useRef(null);
 
   useEffect(() => {
     document.title = "Pernikahan Ayu & Furqon";
-  }, []);
-
-  useEffect(() => {
-    setTimeout(() => {
-      return (audio.oncanplaythrough = (event) => {
-        var playedPromise = audio.play();
-        if (playedPromise) {
-          playedPromise
-            .catch((e) => {
-              console.log(e);
-              if (
-                e.name === "NotAllowedError" ||
-                e.name === "NotSupportedError"
-              ) {
-                console.log(e.name);
-              }
-            })
-            .then(() => {
-              console.log("playing sound !!!");
-            });
-        }
-      });
-    });
-
-    return () => audio.pause();
   }, []);
 
   const statePage = {
@@ -53,16 +30,46 @@ function App() {
     return () => clearInterval(intervalId);
   }, [counter]);
 
+  useEffect(() => {
+    audio.loop = true;
+  }, []);
+
   const secondInvContentRef = useRef(null);
   const thirdInvContentRef = useRef(null);
 
   const [page, setPage] = useState(statePage.Home);
+
+  const handlePlaySound = () => {
+    let isPlay = !play;
+    setIsPlay(isPlay);
+
+    if (isPlay) {
+      var playedPromise = audio.play();
+      if (playedPromise) {
+        playedPromise
+          .catch((e) => {
+            setIsPlay(false);
+            buttonPlayRef.current?.click();
+          })
+          .then(() => {
+            setIsPlay(true);
+          });
+      }
+    } else {
+      audio.pause();
+    }
+  };
   return (
     <>
       <div className="App">
         <div className="AppContent">
           {page === statePage.Home && (
-            <Home onOpenInvitation={() => setPage(statePage.Invitation)} />
+            <Home
+              onOpenInvitation={() => {
+                setPage(statePage.Invitation);
+                if (!play) handlePlaySound();
+              }}
+            />
           )}
 
           {page === statePage.Invitation && (
@@ -88,6 +95,16 @@ function App() {
               <div ref={thirdInvContentRef}>
                 <ThirdInvContent />
               </div>
+              <button
+                ref={buttonPlayRef}
+                onClick={handlePlaySound}
+                className="button-play"
+              >
+                <img
+                  src={play ? IMAGES.Pause : IMAGES.Play}
+                  alt={"button-player"}
+                />
+              </button>
             </div>
           )}
         </div>

@@ -8,6 +8,8 @@ import Furqon from "./Furqon.png";
 import Instagram from "./Instagram.png";
 import Calendar from "./Calendar.png";
 import Location from "./Location.png";
+import Play from "./play.png";
+import Pause from "./pause.png";
 
 const IMAGES = {
   HomeBG,
@@ -20,6 +22,8 @@ const IMAGES = {
   Instagram,
   Calendar,
   Location,
+  Play,
+  Pause,
 };
 
 export default IMAGES;

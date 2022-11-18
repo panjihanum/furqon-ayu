@@ -5,60 +5,71 @@ import IMAGES from "../assets/images/iindex";
 import ENV from "../config/env";
 import styles from "./Home.module.css";
 import Countdown from "react-countdown";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 function ThirdInvContent(props) {
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
       // Render a completed state
       return (
-        <div className="flex flex-row my-7">
-          <div className="flex flex-col items-center justify-center">
-            <span className="montserrat text-5xl">00</span>
-            <span className="montserrat text-lg">Days</span>
+        <AnimationOnScroll
+          animateIn="animate__zoomIn"
+          offset={350}
+        >
+          <div className="flex flex-row my-7">
+            <div className="flex flex-col items-center justify-center">
+              <span className="montserrat text-5xl">00</span>
+              <span className="montserrat text-lg">Days</span>
+            </div>
+            <div className="flex flex-col items-center justify-center ml-7">
+              <span className="montserrat text-5xl">00</span>
+              <span className="montserrat text-lg">Hours</span>
+            </div>
+            <div className="flex flex-col items-center justify-center ml-7">
+              <span className="montserrat text-5xl">00</span>
+              <span className="montserrat text-lg">Minutes</span>
+            </div>
+            <div className="flex flex-col items-center justify-center ml-7">
+              <span className="montserrat text-5xl">00</span>
+              <span className="montserrat text-lg">Seconds</span>
+            </div>
           </div>
-          <div className="flex flex-col items-center justify-center ml-7">
-            <span className="montserrat text-5xl">00</span>
-            <span className="montserrat text-lg">Hours</span>
-          </div>
-          <div className="flex flex-col items-center justify-center ml-7">
-            <span className="montserrat text-5xl">00</span>
-            <span className="montserrat text-lg">Minutes</span>
-          </div>
-          <div className="flex flex-col items-center justify-center ml-7">
-            <span className="montserrat text-5xl">00</span>
-            <span className="montserrat text-lg">Seconds</span>
-          </div>
-        </div>
+        </AnimationOnScroll>
       );
     } else {
       // Render a countdown
       return (
-        <div className="flex flex-row my-7">
-          <div className="flex flex-col items-center justify-center">
-            <span className="montserrat text-5xl font-bold">
-              {days < 10 ? "0" + days : days}
-            </span>
-            <span className="montserrat text-lg">Days</span>
+        <AnimationOnScroll
+          animateIn="animate__zoomIn"
+          offset={350}
+        >
+          <div className="flex flex-row my-7">
+            <div className="flex flex-col items-center justify-center">
+              <span className="montserrat text-5xl font-bold">
+                {days < 10 ? "0" + days : days}
+              </span>
+              <span className="montserrat text-lg">Days</span>
+            </div>
+            <div className="flex flex-col items-center justify-center ml-7">
+              <span className="montserrat text-5xl font-bold">
+                {hours < 10 ? "0" + hours : hours}
+              </span>
+              <span className="montserrat text-lg">Hours</span>
+            </div>
+            <div className="flex flex-col items-center justify-center  ml-7">
+              <span className="montserrat text-5xl font-bold">
+                {minutes < 10 ? "0" + minutes : minutes}
+              </span>
+              <span className="montserrat text-lg">Minutes</span>
+            </div>
+            <div className="flex flex-col items-center justify-center ml-7">
+              <span className="montserrat text-5xl font-bold">
+                {seconds < 10 ? "0" + seconds : seconds}
+              </span>
+              <span className="montserrat text-lg">Seconds</span>
+            </div>
           </div>
-          <div className="flex flex-col items-center justify-center ml-7">
-            <span className="montserrat text-5xl font-bold">
-              {hours < 10 ? "0" + hours : hours}
-            </span>
-            <span className="montserrat text-lg">Hours</span>
-          </div>
-          <div className="flex flex-col items-center justify-center  ml-7">
-            <span className="montserrat text-5xl font-bold">
-              {minutes < 10 ? "0" + minutes : minutes}
-            </span>
-            <span className="montserrat text-lg">Minutes</span>
-          </div>
-          <div className="flex flex-col items-center justify-center ml-7">
-            <span className="montserrat text-5xl font-bold">
-              {seconds < 10 ? "0" + seconds : seconds}
-            </span>
-            <span className="montserrat text-lg">Seconds</span>
-          </div>
-        </div>
+        </AnimationOnScroll>
       );
     }
   };
@@ -132,32 +143,52 @@ function ThirdInvContent(props) {
         backgroundImage: `url(${IMAGES.ThirdContentBG})`,
       }}
     >
-      <span className="text-lg choppin-script">
-        Menghitung Mundur Menuju Hari Besar{" "}
-      </span>
-      <span className="text-lg mt-5">
-        {format(new Date(ENV.tanggalResepsi), "dd MMMM yyyy")}
-      </span>
+      <AnimationOnScroll
+        animateIn="animate__zoomIn"
+        offset={350}
+      >
+        <span className="text-lg choppin-script">
+          Menghitung Mundur Menuju Hari Besar{" "}
+        </span>
+      </AnimationOnScroll>
+      <AnimationOnScroll
+        animateIn="animate__zoomIn"
+        offset={350}
+      >
+        <span className="text-lg mt-5">
+          {format(new Date(ENV.tanggalResepsi), "dd MMMM yyyy")}
+        </span>
+      </AnimationOnScroll>
       <Countdown
         zeroPadTime={2}
         date={new Date(ENV.tanggalResepsi)}
         renderer={renderer}
       />
-      <Button
-        title="Tambahkan Ke Kalendar"
-        onPress={() =>
-          openInNewTab(
-            "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20221118%2F20221119&location=https%3A%2F%2Fgoo.gl%2Fmaps%2FA9GDMu388TQxssAc8&text=%5BPERNIKAHAN%5D%20Furqon%20%26%20Ayu"
-          )
-        }
-        img={IMAGES.Calendar}
-      />
-      <div className="mt-5" />
-      {dataBox.map((data, i) => (
-        <div key={"K " + i} className="mt-5">
-          <Box data={data} />
-        </div>
-      ))}
+      <AnimationOnScroll
+        animateIn="animate__zoomIn"
+        offset={350}
+      >
+        <Button
+          title="Tambahkan Ke Kalendar"
+          onPress={() =>
+            openInNewTab(
+              "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20221118%2F20221119&location=https%3A%2F%2Fgoo.gl%2Fmaps%2FA9GDMu388TQxssAc8&text=%5BPERNIKAHAN%5D%20Furqon%20%26%20Ayu"
+            )
+          }
+          img={IMAGES.Calendar}
+        />
+      </AnimationOnScroll>
+      <AnimationOnScroll
+        animateIn="animate__zoomIn"
+        offset={350}
+      >
+        <div className="mt-5" />
+        {dataBox.map((data, i) => (
+          <div key={"K " + i} className="mt-5">
+            <Box data={data} />
+          </div>
+        ))}
+      </AnimationOnScroll>
     </div>
   );
 }

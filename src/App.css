@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'animate.css';
 
 @font-face {
   font-family: "ChoppinScript";
@@ -9,8 +10,17 @@
 
 *,
 html {
-
   scroll-behavior: smooth !important;
+}
+
+.button-play {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+  background-color: rgba(255, 255, 255, 0.171);
+  border-radius: 10px;
 }
 
 html:focus-within {

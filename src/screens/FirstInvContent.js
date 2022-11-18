@@ -19,7 +19,7 @@ function FirstInvContent(props) {
         }}
       >
         <div></div>
-        <div className="flex flex-col mb-10">
+        <div className="flex flex-col mb-10 animate__animated animate__zoomIn animate__faster">
           <span className="text-2xl choppin-script">Pernikahan</span>
           <span className="text-4xl my-2">AYU & FURQON</span>
           <span className="text-base">
