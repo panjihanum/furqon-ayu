@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-sequences */
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import IMAGES from "../assets/images/iindex";
 import styles from "./Home.module.css";
@@ -13,15 +13,16 @@ function SecondInvContent(props) {
     {
       namaLengkap: "Ayu Nynda Havitasari",
       namaPanggilan: "Ayu",
-      namaOrangTua: "Anak dari Aiptu Hapit Biantoro, S.H & ALM. Tri Iswari",
-      instagramUrl: "https://www.instagram.com/furqonramadhani",
+      namaOrangTua:
+        "Putri dari Aiptu Hapit Biantoro, S.H & Melly Giyanny G. S.Pd",
+      instagramUrl: "https://www.instagram.com/ayunyndahavit",
       img: IMAGES.Ayu,
     },
     {
       namaLengkap: "Furqon Ramadhani ",
       namaPanggilan: "Furqon",
-      namaOrangTua: "Anak dari Abdul Azis & Indriyastuti",
-      instagramUrl: "https://www.instagram.com/ayunyndahavit",
+      namaOrangTua: "Putra dari Abdul Azis & Indriyastuti",
+      instagramUrl: "https://www.instagram.com/furqonramadhani",
       img: IMAGES.Furqon,
     },
   ];
@@ -42,7 +43,10 @@ function SecondInvContent(props) {
       <div className="flex flex-col" ref={animationRef}>
         {mempelaiDatas.map((mempelaiData, index) => {
           return (
-            <AnimationOnScroll animateIn="animate__slideInLeft" animateOut="animate__zoomOut">
+            <AnimationOnScroll
+              animateIn="animate__slideInLeft"
+              animateOut="animate__zoomOut"
+            >
               <div
                 className="flex flex-col items-center pt-5 pb-5 "
                 key={index + "K"}

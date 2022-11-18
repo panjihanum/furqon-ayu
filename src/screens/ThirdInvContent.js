@@ -12,10 +12,7 @@ function ThirdInvContent(props) {
     if (completed) {
       // Render a completed state
       return (
-        <AnimationOnScroll
-          animateIn="animate__zoomIn"
-          offset={350}
-        >
+        <AnimationOnScroll animateIn="animate__zoomIn">
           <div className="flex flex-row my-7">
             <div className="flex flex-col items-center justify-center">
               <span className="montserrat text-5xl">00</span>
@@ -39,10 +36,7 @@ function ThirdInvContent(props) {
     } else {
       // Render a countdown
       return (
-        <AnimationOnScroll
-          animateIn="animate__zoomIn"
-          offset={350}
-        >
+        <AnimationOnScroll animateIn="animate__zoomIn">
           <div className="flex flex-row my-7">
             <div className="flex flex-col items-center justify-center">
               <span className="montserrat text-5xl font-bold">
@@ -121,19 +115,19 @@ function ThirdInvContent(props) {
       title: "Akad Nikah",
       tanggal: "Minggu, 18 Desember 2022",
       waktu: "09.00 s/d selesai",
-      alamat: "Di YON ARHANUD 6",
+      alamat: "Di Aula Rangkok Arhanud",
       alamatDetail:
-        "Jl. Lagoa Kanal No.41, RT.04/RW.02, Bawang, Kec. Tj. Priok, Kota Jakarta Utara",
-      alamatUrl: "https://goo.gl/maps/A9GDMu388TQxssAc8",
+        "Jl. Kb. Bawang XIV No.8, Kb. Bawang, Tanjung. Priok, Jakarta Utara, 14320",
+      alamatUrl: "https://www.google.com/maps/place/Aula+Rangkok/@-6.1126882,106.8868475,21z/data=!4m19!1m13!4m12!1m4!2m2!1d107.0170112!2d-6.2291968!4e1!1m6!1m2!1s0x2e6a1fbf8c5d0ddf:0x79b40a7d8e288e9b!2sAula+Rangkok+Arhanud!2m2!1d106.8869472!2d-6.1127851!3m4!1s0x2e6a1fbf8c5d0ddf:0x79b40a7d8e288e9b!8m2!3d-6.1127851!4d106.8869472",
     },
     {
       title: "RESEPSI",
       tanggal: "Minggu, 18 Desember 2022",
-      waktu: "10.00 s/d selesai",
-      alamat: "Di YON ARHANUD 6",
+      waktu: "11.00 s/d 13.00",
+      alamat: "Di Aula Rangkok Arhanud",
       alamatDetail:
-        "Jl. Lagoa Kanal No.41, RT.04/RW.02, Bawang, Kec. Tj. Priok, Kota Jakarta Utara",
-      alamatUrl: "https://goo.gl/maps/A9GDMu388TQxssAc8",
+        "Jl. Kb. Bawang XIV No.8, Kb. Bawang, Tanjung. Priok, Jakarta Utara, 14320",
+      alamatUrl: "https://www.google.com/maps/place/Aula+Rangkok/@-6.1126882,106.8868475,21z/data=!4m19!1m13!4m12!1m4!2m2!1d107.0170112!2d-6.2291968!4e1!1m6!1m2!1s0x2e6a1fbf8c5d0ddf:0x79b40a7d8e288e9b!2sAula+Rangkok+Arhanud!2m2!1d106.8869472!2d-6.1127851!3m4!1s0x2e6a1fbf8c5d0ddf:0x79b40a7d8e288e9b!8m2!3d-6.1127851!4d106.8869472",
     },
   ];
   return (
@@ -143,18 +137,12 @@ function ThirdInvContent(props) {
         backgroundImage: `url(${IMAGES.ThirdContentBG})`,
       }}
     >
-      <AnimationOnScroll
-        animateIn="animate__zoomIn"
-        offset={350}
-      >
+      <AnimationOnScroll animateIn="animate__zoomIn">
         <span className="text-lg choppin-script">
           Menghitung Mundur Menuju Hari Besar{" "}
         </span>
       </AnimationOnScroll>
-      <AnimationOnScroll
-        animateIn="animate__zoomIn"
-        offset={350}
-      >
+      <AnimationOnScroll animateIn="animate__zoomIn">
         <span className="text-lg mt-5">
           {format(new Date(ENV.tanggalResepsi), "dd MMMM yyyy")}
         </span>
@@ -164,10 +152,7 @@ function ThirdInvContent(props) {
         date={new Date(ENV.tanggalResepsi)}
         renderer={renderer}
       />
-      <AnimationOnScroll
-        animateIn="animate__zoomIn"
-        offset={350}
-      >
+      <AnimationOnScroll animateIn="animate__zoomIn">
         <Button
           title="Tambahkan Ke Kalendar"
           onPress={() =>
@@ -178,10 +163,7 @@ function ThirdInvContent(props) {
           img={IMAGES.Calendar}
         />
       </AnimationOnScroll>
-      <AnimationOnScroll
-        animateIn="animate__zoomIn"
-        offset={350}
-      >
+      <AnimationOnScroll animateIn="animate__zoomIn">
         <div className="mt-5" />
         {dataBox.map((data, i) => (
           <div key={"K " + i} className="mt-5">
