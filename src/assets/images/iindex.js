@@ -10,6 +10,8 @@ import Calendar from "./Calendar.png";
 import Location from "./Location.png";
 import Play from "./play.png";
 import Pause from "./pause.png";
+import Floral from "./floral.png";
+import FurqonAyu from "./IMG_20221108_173918_672.jpg";
 
 const IMAGES = {
   HomeBG,
@@ -24,6 +26,8 @@ const IMAGES = {
   Location,
   Play,
   Pause,
+  Floral,
+  FurqonAyu,
 };
 
 export default IMAGES;

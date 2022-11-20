@@ -34,12 +34,41 @@ function SecondInvContent(props) {
         backgroundPositionY: "20%",
       }}
     >
-      <img
-        src={IMAGES.Flower}
-        alt="flower"
-        className="relative"
-        style={{ top: -30 }}
-      />
+      <AnimationOnScroll
+        animateIn="animate__zoomIn"
+        animateOut="animate__zoomOut"
+      >
+        <div className="flex flex-col p-10">
+          <img
+            src={IMAGES.Floral}
+            alt="flower"
+            className="relative"
+            style={{ top: -30 }}
+          />
+          <span className="text-base color-dark">
+            "Dan di antara tanda-tanda kekuasaan-Nya diciptakan-Nya untukmu
+            pasangan hidup dari jenismu sendiri supaya kamu dapat ketenangan
+            hati dan dijadikannya kasih sayang di antara kamu. Sesungguhnya yang
+            demikian menjadi tanda-tanda kebesaran-Nya bagi orang-orang yang
+            berpikir."
+            <br />
+            <br />
+            <span className="font-bold">Q.S Ar-Rum Ayat 21</span>
+          </span>
+          <img
+            src={IMAGES.FurqonAyu}
+            alt="flower"
+            className="relative self-center mt-10 mb-5 w-full"
+            style={{ borderRadius: 20, boxShadow: "2px 4px #bbbbbb" }}
+          />
+        </div>
+      </AnimationOnScroll>
+      <AnimationOnScroll
+        animateIn="animate__slideInLeft"
+        animateOut="animate__zoomOut"
+      >
+        <img src={IMAGES.Flower} alt="flower" className="relative" />
+      </AnimationOnScroll>
       <div className="flex flex-col" ref={animationRef}>
         {mempelaiDatas.map((mempelaiData, index) => {
           return (

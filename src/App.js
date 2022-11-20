@@ -12,10 +12,6 @@ function App() {
   const [play, setIsPlay] = useState(false);
   const buttonPlayRef = useRef(null);
 
-  useEffect(() => {
-    document.title = "Pernikahan Ayu & Furqon";
-  }, []);
-
   const statePage = {
     Home: "HOME",
     Invitation: "Invitation",
