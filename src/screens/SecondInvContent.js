@@ -14,7 +14,7 @@ function SecondInvContent(props) {
       namaLengkap: "Ayu Nynda Havitasari",
       namaPanggilan: "Ayu",
       namaOrangTua:
-        "Putri dari Aiptu Hapit Biantoro, S.H & Melly Giyanny G. S.Pd",
+        "Putri dari Aiptu Hj. Hapit Biantoro, S.H & Melly Giyanny G. S.Pd",
       instagramUrl: "https://www.instagram.com/ayunyndahavit",
       img: IMAGES.Ayu,
     },
