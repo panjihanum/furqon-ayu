@@ -6,6 +6,7 @@ import Home from "./screens/Home";
 import SecondInvContent from "./screens/SecondInvContent";
 import ThirdInvContent from "./screens/ThirdInvContent";
 import IMAGES from "./assets/images/iindex";
+import FourthInvContent from "./screens/FourthInvContent";
 
 function App() {
   const [audio] = useState(new Audio(MUSIC.Instrumental));
@@ -90,6 +91,7 @@ function App() {
               </div>
               <div ref={thirdInvContentRef}>
                 <ThirdInvContent />
+                <FourthInvContent />
               </div>
               <button
                 ref={buttonPlayRef}

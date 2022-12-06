@@ -12,8 +12,11 @@ import Play from "./play.png";
 import Pause from "./pause.png";
 import Floral from "./floral.png";
 import FurqonAyu from "./IMG_20221108_173918_672.jpg";
+import CopyIcon from "./copy-icon.svg";
+import BCA from "./logo-dan-profile-bank-bca-logo-dan-profile-5.png";
 
 const IMAGES = {
+  BCA,
   HomeBG,
   FirstContentBG,
   SecondContentBG,
@@ -28,6 +31,7 @@ const IMAGES = {
   Pause,
   Floral,
   FurqonAyu,
+  CopyIcon,
 };
 
 export default IMAGES;
